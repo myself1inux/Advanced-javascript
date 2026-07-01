@@ -1,0 +1,48 @@
+
+//OBJECT IS A STANDALONE CONTAINER THAT STORES A COLLECTION OF RELATED DATA AND BEHAVIOUR AS KEY-VALUE PAIRS
+//PROTOTYPE IN JS
+/*
+A JAVASCRIPT OBJECT IS AN ENTITY HAVING STATE AND BEHAVIOUR(PROPERTIES AND METHODS)
+
+JS OBJECTS HAVE A SPECIAL PROPERTY CALLED PROTOTYPE  ------ REFRENCE TO AN OBJECT
+WE CAN SET PROTOTYPE USING __proto__
+
+* IF OBJECT AND PROTOTYPE HAVE SAME METHODS, OBJECT`S METHOD WILL BE USED
+*/
+
+//CREATING A NORMAL FUNCTION
+//THIS IS ALSO AN OBJECT
+const function_name = (formal_parameter_or_parameter)  => {
+    //fuction body here
+    console.log("This is a demo function.");
+}
+
+function_name(actual_parameter_or_argument);
+
+//OBJECTS
+
+const employee = {
+    //METHOD 1 FOR CREATING A FUNCTION INSIDE THE OBJECT
+    //USER DEFINDED METHOD IN AN OBJECT
+    calcTax1() {
+        console.log("The tax rate is 10%");
+    },
+
+    //METHOD 2 FOR CREATING A FUNCTION INSIDE THE OBJECT
+    //THIS IS ALSO KNOWN AS METHOD IN THE OBJECT
+    calcTax2 : function () {
+        console.log("The tax rate is 20 %");
+    }
+}
+
+const karanArjun = {
+    salary : 30000,
+    
+}
+
+//THIS MAKES THE RELATION OF AN OBJECT TO AN ANORTHER OBJECT 
+//OR ADDING A PROTOTYPE IN AN OBJECT
+karanArjun.__proto__ = employee;
+
+//NOW WE CAN USE THE FUNCTION OF OUR PROTOTYPE IN THE OBJECT IN WHICH WE ADDED THE PROTOTYPE 
+karanArjun.calcTax1();
